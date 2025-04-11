@@ -1,0 +1,64 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.menu {
+  position: absolute; // 設定為絕對定位
+  top: 10px;
+  right: -500px; /* 初始隱藏在畫面外 */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* 調整項目間距為 30px */
+  transition: right 0.3s ease; /* 添加滑入滑出的過渡效果 */
+}
+
+.menu.show {
+  right: 80px; /* 顯示選單時滑入到畫面內 */
+}
+
+.menu li {
+  font-family: 'Microsoft JhengHei', Arial, sans-serif; /* 修改字型為微軟正黑體 */
+  font-size: 20px;
+  color: #4a5759;
+  cursor: pointer;
+  position: relative; /* 為子選單定位 */
+}
+
+.menu .submenu {
+  display: none; /* 初始隱藏子選單 */
+  position: absolute;
+  top: 100%; /* 子選單顯示在主選單下方 */
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.2); /* 設定背景顏色透明度為 0.2 */
+  width: 70px; /* 增加子選單寬度 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu .submenu li {
+  font-size: 16px;
+  color: #4a5759;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.menu .submenu li:hover {
+  background-color: #f0f0f0; /* 滑鼠懸停時改變背景顏色 */
+}
+
+.menu li:hover .submenu {
+  display: block; /* 滑鼠懸停時顯示子選單 */
+}
+
+.menu li:hover {
+  color: #457b9d; /* 滑鼠懸停時改變顏色 */
+}
